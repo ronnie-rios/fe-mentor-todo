@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PostTodo from '../components/PostTodo'
-import Card from '../ui/Card'
+import SingleTodo from '../components/SingleTodo';
 
 const Home = () => {
     const [todos, setTodos] = useState([]);
@@ -9,9 +9,9 @@ const Home = () => {
     return (
         <main>
             <h1>TODO</h1>
-            <PostTodo />
+            <PostTodo setTodos={setTodos}/>
             <div>
-                {todos.length === 0 ? <Card todo={'enter a value'}/> : <Card todos={todos} />}
+                {todos.length === 0 ? 'enter a value' : <SingleTodo todos={todos} />}
             </div>
         </main>
     )

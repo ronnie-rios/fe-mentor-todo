@@ -1,8 +1,13 @@
 import React from 'react'
 
-const SingleTodo = () => {
+const SingleTodo =({ todos }) => {
+    console.log(todos)
   return (
-    <div>SingleTodo</div>
+    <div>
+        {todos && todos.map((item) => (
+            <p key={item.todo}>{item.todo}</p>
+        ))}
+    </div>
   )
 }
 
